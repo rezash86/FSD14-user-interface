@@ -113,3 +113,10 @@ customers
 // function filterCustomer(customer){
 //     return customer.custId.length > 4
 // }
+
+//
+let numbersArr = [5, 13, 14, 50];
+numbersArr
+  .map((x) => x * 2)
+  .filter((number) => number > 15)
+  .forEach((n) => console.log(`Number : ${n}`));
