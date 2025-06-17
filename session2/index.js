@@ -66,3 +66,50 @@ inventory.forEach((fruit) => {
     console.log(`out of stock for ${fruit.name}`);
   }
 });
+
+///Array example
+let foods = ["pizza", "sushi", "sandwich"];
+console.log(foods[1]);
+foods.push("pasta");
+console.log(foods);
+foods.shift();
+console.log(foods);
+
+for (let food of foods) {
+  console.log(food);
+}
+
+function squ(n) {
+  return n * n;
+}
+// Map
+let numbers = [1, 2, 3, 4];
+let resultArray = numbers.map(squ);
+let resultArray2 = numbers.map((x) => x * x);
+console.log(resultArray);
+
+let customers = [
+  { name: "A", gender: "M", custId: "1231231" },
+  { name: "B", gender: "F", custId: "4444" },
+  { name: "C", gender: "F", custId: "243424" },
+];
+
+for (let cust of customers) {
+  console.log(cust);
+}
+
+// chain of command
+// I would like to get only the name of the customers
+// I would like to ignore the custId
+customers
+  .filter((customer) => customer.custId.length > 4)
+  .map((cust) => {
+    if (cust.gender === "F") {
+      return "Ms " + cust.name;
+    } else return "Mr " + cust.name;
+  })
+  .forEach((cust) => console.log(cust));
+
+// function filterCustomer(customer){
+//     return customer.custId.length > 4
+// }
