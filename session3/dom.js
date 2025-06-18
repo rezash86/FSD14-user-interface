@@ -20,3 +20,30 @@ let obj = document.getElementById("testme");
 obj.remove();
 
 document.getElementById("generateButton").removeChild(newBtn);
+
+/// EVENTS
+document.getElementById("hideBtn").addEventListener("click", function () {
+  //   alert("This is a message");
+  console.log("the button clicked");
+  console.log(this); //returns me the node
+  this.style.display = "none";
+});
+
+// document.getElementById("showAlert").addEventListener("click", function () {
+//   let value = document.getElementById("alert").value;
+//   //   console.log(document.getElementById("alert"));
+//   alert(value);
+// });
+
+function showAlert() {
+  let value = document.getElementById("alert").value;
+  alert(value);
+}
+
+function mouseOver() {
+  document.getElementById("showAlert").style.backgroundColor = "green";
+}
+
+function mouseLeave() {
+  document.getElementById("showAlert").style.backgroundColor = "blue";
+}
