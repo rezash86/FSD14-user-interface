@@ -54,3 +54,11 @@ function reducer(accumulator, currentValue, index) {
 }
 
 array.reduce(reducer);
+
+// REDUCE – subtract of all values.
+const factors = [10, 20, 30, 40];
+factors.reduce((accumulator, currentValue) => currentValue - accumulator);
+
+// 4! = 4 * 3 * 2 * 1
+
+// 10 * 20 * 30 * 40
