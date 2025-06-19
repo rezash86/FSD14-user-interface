@@ -47,3 +47,42 @@ function mouseOver() {
 function mouseLeave() {
   document.getElementById("showAlert").style.backgroundColor = "blue";
 }
+
+//I use createElement
+function addItem() {
+  const ul = document.getElementById("list");
+  const li = document.createElement("li");
+  let n = ul.getElementsByTagName("li").length;
+  li.textContent = `item ${n + 1}`;
+  ul.appendChild(li);
+}
+
+const removeLastItem = () => {
+  const ul = document.getElementById("list");
+  if (ul.lastChild) {
+    ul.lastChild.remove();
+  }
+};
+
+const chanegImage = () => {
+  let randomNumber = Math.floor(Math.random() * (1000 - 200 + 1)) + 200;
+  //   console.log(`https://picsum.photos/${randomNumber}/200`);
+  document.getElementById(
+    "randomImage"
+  ).src = `https://picsum.photos/${randomNumber}/200`;
+};
+
+const calcParagraphs = () =>
+  alert(
+    `The count of paragraphs is ${document.getElementsByTagName("p").length}`
+  );
+
+document.getElementById("cardForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const title = document.getElementById("titleInput").value;
+  const description = document.getElementById("descInput").value;
+  const cardNode = document.createElement("div");
+  cardNode.innerHTML = "<h3>" + title + "</h3><p>" + description + "</p>";
+  document.getElementById("cardContainer").appendChild(cardNode);
+  this.reset();
+});
