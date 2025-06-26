@@ -14,6 +14,8 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(emailInput.value.trim())) {
     emailInput.classList.add("is-invalid");
+    //you can add a logic and change the text of that div based on the logic
+    document.getElementById("emailFeedbackId").textContent = "new message";
     valid = false;
   } else {
     emailInput.classList.remove("is-invalid");
