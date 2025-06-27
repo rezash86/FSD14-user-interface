@@ -1,5 +1,9 @@
 function loadData() {
-  fetch("https://api.chucknorris.io/jokes/random")
+  fetch("https://api.chucknorris.io/jokes/random", {
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
     .then((res) => res.json())
     .then(
       (data) => (document.getElementById("lameJoke").innerText = data.value)
